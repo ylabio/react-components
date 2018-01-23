@@ -1,0 +1,38 @@
+{
+  "presets": [
+    "env",
+    "react"
+  ],
+  "env": {
+    "development": {
+      "plugins": [
+        [
+          "react-transform",
+          {
+            "transforms": [
+              {
+                "transform": "react-transform-hmr",
+                "imports": [
+                  "react"
+                ],
+                "locals": [
+                  "module"
+                ]
+              }
+            ]
+          }
+        ],
+        "transform-class-properties",
+        "syntax-class-properties",
+        "transform-object-rest-spread"
+      ]
+    },
+    "production": {
+      "plugins": [
+        "transform-class-properties",
+        "syntax-class-properties",
+        "transform-object-rest-spread"
+      ]
+    }
+  }
+}
