@@ -1,0 +1,86 @@
+@import 'helpers';
+
+.InputText {
+  position: relative;
+  &__control {
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 15px;
+    line-height: 20px;
+    color: #000;
+    background-color: #fff;
+    // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214.
+    background-image: none;
+    background-clip: padding-box;
+    border: 1px solid #000;
+    border-radius: 0;
+
+    // Unstyle the caret on `<select>`s in IE10+.
+    &::-ms-expand {
+      background-color: transparent;
+      border: 0;
+    }
+
+    // Customize the `:focus` state to imitate native WebKit styles.
+    &:focus {
+      outline: none;
+    }
+
+    // Placeholder
+    &::placeholder {
+      color: #c9c9c9;
+      // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526.
+      opacity: 1;
+    }
+
+    // Disabled and read-only inputs
+    //
+    // HTML5 says that controls under a fieldset > legend:first-child won't be
+    // disabled if the fieldset is disabled. Due to implementation difficulty, we
+    // don't honor that edge case; we style them as disabled anyway.
+    &:disabled,
+    &[readonly] {
+      background-color: darken(#fff, 10%);;
+      // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655.
+      opacity: 1;
+    }
+  }
+  &__clear {
+    .margin-y(auto);
+    position: absolute;
+    top: 0;
+    right: 14px;
+    bottom: 0;
+    width: 1.1em;
+    height: 1.1em;
+    border: none;
+    background: transparent;
+    &:before, &:after {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      content: ' ';
+      height: 1.1em;
+      width: 1px;
+      background-color: #000;
+    }
+    &:before {
+      transform: rotate(45deg);
+    }
+    &:after {
+      transform: rotate(-45deg);
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &_mini &__control {
+    height: 20px;
+    font-size: 15px;
+    padding: 5px 4px;
+    font-weight: 100;
+    }
+}

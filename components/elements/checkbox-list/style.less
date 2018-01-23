@@ -1,0 +1,28 @@
+@import 'helpers';
+
+.CheckboxList {
+  position:relative;
+  display:block;
+
+  &__button {
+    position:absolute;
+    top:20px;
+    right:20px;
+    padding:5px;
+
+    cursor:pointer;
+  }
+
+  &__list{
+    .margin-x(-20px);
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    margin-bottom: 20px;
+    .padding-x(20px);
+    flex-basis: 33.3333%;
+    max-width: 33.3333%;
+  }
+}

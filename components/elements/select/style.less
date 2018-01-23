@@ -1,0 +1,147 @@
+.Select {
+  position: relative;
+  height: 37px;
+  width: 100%;
+  display: block;
+  font-size: 15px;
+  cursor: pointer;
+  box-sizing: border-box;
+  //z-index: 999999;
+  color: #000;
+  background-color: #fff;
+  // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214.
+  background-image: none;
+  background-clip: padding-box;
+  border: 1px solid #000;
+  border-radius: 0;
+
+  &.expanded {
+    z-index: 19999999;
+  }
+
+  &__value {
+    color: #003c4d;
+    padding: 0 10px;
+    line-height: 35px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+
+    &_placeholder {
+      color: #ccc;
+    }
+  }
+
+  &__toggler {
+    position: absolute;
+    top: 0;
+    right: 1.3em;
+    bottom: 0;
+    margin: auto;
+    display: block;
+    width: 1.2em;
+    height: 1.2em;
+    content: '';
+    border: 1px solid #000;
+    border-top-width: 0;
+    border-left-width: 0;
+    transform: rotate(45deg) translateY(-50%);
+  }
+
+  &__error {
+    color: #f00;
+  }
+
+  &__list {
+    display: none;
+    position: absolute;
+    left: -1px;
+    top: 35px;
+    max-height: 210px;
+    right: -1px;
+    border: 1px solid #ccc;
+    overflow: auto;
+    background: #fff;
+    z-index: 1;
+  }
+  &__list.expanded {
+    display: block;
+    z-index: 10000;
+  }
+
+  &__item {
+    height: 35px;
+    box-sizing: border-box;
+    line-height: 35px;
+    padding: 0 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #b2b2b2;
+    &:hover {
+      background: #aaa;
+      color: #fff;
+    }
+  }
+  &__item.active,
+  &__item.active:hover {
+    background: #ccc;
+    color: #fff;
+  }
+
+  &_black {
+    border: 1px solid #000;
+  }
+  &_black &__value {
+    background-color: #000;
+    color: #fff;
+  }
+  &_black &__toggler {
+    border-color: #fff;
+  }
+
+  &_blue {
+    border: 1px solid #003c4d;
+  }
+  &_blue &__value {
+    background-color: #003c4d;
+    color: #fff;
+  }
+
+  &_light {
+    border: none;
+    height: 48px;
+
+  }
+  &_light &__value {
+    color: #ccc;
+    line-height: 48px;
+    font-size: 16px;
+  }
+  &_light &__list {
+    top: 48px;
+  }
+
+
+  &_mini {
+    height: 20px;
+    font-size: 15px;
+    font-weight: 100;
+  }
+  &_mini &__list {
+    top: 19px;
+  }
+  &_mini &__value {
+    padding: 0 28px 0 10px;
+    line-height: 19px;
+  }
+  &_mini &__item {
+    height: 25px;
+    line-height: 25px;
+  }
+  &_mini &__toggler {
+    font-size: 10px;
+  }
+
+}

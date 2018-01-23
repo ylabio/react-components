@@ -1,0 +1,37 @@
+.Textarea{
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  z-index: 100;
+
+  &__control{
+    position: relative;
+    min-height: 37px;
+    display: block;
+    border: 1px solid #000;
+    cursor: pointer;
+    box-sizing: border-box;
+    z-index: 100;
+  }
+
+  &__input{
+    color: #003c4d;
+    padding: 5px 10px;
+    line-height: 20px;
+    min-height: 37px;
+    height: 150px;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    border: none;
+    font-size: 15px;
+    display: block;
+
+    &:focus{
+      outline: none;
+    }
+  }
+  &__error{
+    color: #f00;
+  }
+}
