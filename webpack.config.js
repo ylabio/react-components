@@ -6,7 +6,7 @@ let path = require('path');
 let webpack = require('webpack');
 
 let config = {
-  context: path.join(__dirname, "/src"),
+  context: path.join(__dirname, "/components"),
   entry: [
     'babel-polyfill',
     'index.js'
@@ -26,7 +26,7 @@ let config = {
   ],
   resolve: {
     extensions: [/*'', */'.js', '.jsx'],
-    modules: [path.resolve(__dirname, 'src'), 'node_modules']
+    modules: [path.resolve(__dirname, 'components'), 'node_modules']
   },
   module: {
     rules: [
@@ -47,7 +47,7 @@ let config = {
         use: [
           {loader: 'style-loader'},
           {loader: 'css-loader', options: {url: true}},
-          {loader: 'less-loader', options: {url: true, paths: [path.resolve(__dirname, 'src/ui/')]}},
+          {loader: 'less-loader', options: {url: true, paths: [path.resolve(__dirname, 'ui/')]}},
         ]
       },
       {
@@ -56,7 +56,7 @@ let config = {
       },
       {
         test: /\.(svg|png|swf|jpg|otf|eot|ttf|woff|woff2)(\?.*)?$/,
-        exclude: path.resolve(__dirname, 'src/components/elements/icon'),
+        exclude: path.resolve(__dirname, 'components/elements/icon'),
         use: [
           {loader: 'url-loader', options: {limit: 100000, name: 'assets/[hash].[ext]'}}
         ]
