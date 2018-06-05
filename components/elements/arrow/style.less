@@ -1,0 +1,17 @@
+.Arrow {
+  vertical-align: middle;
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  fill: #333;
+  fill-opacity: .7;
+  transition: fill-opacity 175ms, transform 175ms, fill 175ms;
+
+  &__up {
+    transform: rotate(-180deg);
+  }
+
+  &__down {
+    transform: none;
+  }
+}
